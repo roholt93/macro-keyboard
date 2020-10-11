@@ -1,0 +1,15 @@
+# Configuration file to connect the shortcut to a script to execute.
+# suppress means that if this script catches a keyboard shortcut it will
+# not propagate to other programs.
+
+- shortcut: "ctrl+alt+1"
+  suppress: false
+  script:
+    - /bin/bash
+    - -c
+    - echo "hello"
+- shortcut: "ctrl+alt+2"
+  suppress: false
+  script:
+    - /bin/bash
+    - ./scripts/open_blog.sh
