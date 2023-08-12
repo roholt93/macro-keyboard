@@ -1,2 +1,2 @@
-keyboard
-pyyaml
+keyboard==0.13.5
+PyYAML==6.0.1

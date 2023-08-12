@@ -26,11 +26,9 @@ Only tested on Ubuntu:
 - $ pip3 install -r requirements.txt
 
 ### Running
-    $ sudo python3 macro-watcher.py
 
-Or if you want to run in in the background.  
-
-    $ sudo python3 macro-watcher.py &
-
-Additonally one might run it at the start with a systemd script, which I do not provide.
+    Execute:
+    ``` 
+    ./run.sh
+    ```
 
