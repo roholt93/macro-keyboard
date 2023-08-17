@@ -7,10 +7,6 @@ Therefore I've decided to first create a small script that is able to catch shor
 
 Later on I still will be able to create/buy a physical macro keyboard and repurpose this script.
 
-## BIG FAT NOTE
-You must run this as root, as it attaches to /dev/input/* which is only accessible by root. I've tried to overcome this, but for now that is okay.
-As a side effect, all scripts executed by this application will be run as, therefore we demote executing the scripts as a regular user.
-
 ## Installation
 
 Only tested on Ubuntu: 
