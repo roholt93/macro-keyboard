@@ -9,26 +9,34 @@ Later on I still will be able to create/buy a physical macro keyboard and repurp
 
 ## BIG FAT NOTE
 You must run this as root, as it attaches to /dev/input/* which is only accessible by root. I've tried to overcome this, but for now that is okay.
-As a side effect, all scripts executed by this application will be run as
-root.
+As a side effect, all scripts executed by this application will be run as, therefore we demote executing the scripts as a regular user.
 
 ## Installation
 
 Only tested on Ubuntu: 
 
     $ lsb_release -a
-    Description:    Ubuntu 18.04.4 LTS
-    Release:        18.04
-    Codename:       bionic
-
+    Distributor ID: Ubuntu
+    Description:    Ubuntu 22.04.3 LTS
+    Release:        22.04
+    Codename:       jammy
 ### Dependencies
+
 - Python 3
-- $ pip3 install -r requirements.txt
 
 ### Running
 
     Execute:
     ``` 
-    ./run.sh
+    sudo ./run-macro-keyboard.sh
     ```
 
+
+### Installation
+
+    Execute:
+    ``` 
+    ./install.sh
+    ```
+
+    The installation will create a systemd service file that directs to the location of where this repo is.

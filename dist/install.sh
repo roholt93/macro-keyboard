@@ -18,5 +18,8 @@ sed "s,{{WORKING_DIR}},${THISDIR},g" ${THISDIR}/macro-keyboard.service > ${TEMP_
 sed -i "s,{{LOCAL_USER}},${USER},g" ${TEMP_DIR}/macro-keyboard.service
 
 sudo cp ${TEMP_DIR}/macro-keyboard.service ${SERVICE_FILE_LOCATION}/macro-keyboard.service
+rm -rf ${TEMP_DIR}/macro-keyboard.service
+
 sudo systemctl daemon-reload
 sudo systemctl enable macro-keyboard
+
