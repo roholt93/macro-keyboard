@@ -2,4 +2,4 @@
 
 # Possibilities are endless
 # For example: Visit your favorite blog.
-sensible-browser --no-sandbox http://blog.roholt.nl
+/usr/bin/google-chrome-unstable http://blog.roholt.nl

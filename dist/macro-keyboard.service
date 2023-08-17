@@ -1,0 +1,12 @@
+[Unit]
+Description=Keyboard watcher
+
+[Service]
+WorkingDirectory={{WORKING_DIR}}
+ExecStart=/bin/bash {{WORKING_DIR}}/run-macro-keyboard.sh
+Restart=always
+Environment=DISPLAY=:0
+Environment=MACRO_KEYBOARD_LOCAL_USER={{LOCAL_USER}}
+
+[Install]
+WantedBy=multi-user.target
