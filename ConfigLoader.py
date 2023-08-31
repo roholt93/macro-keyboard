@@ -3,29 +3,30 @@
 
 import yaml
 
+
 class ConfigLoader:
-  def __init__(self, path):
-    self.loadedConfig = [{}]
-    self.load(path)
-    self.verify(self.loadedConfig)
+    def __init__(self, path):
+        self.loaded_config = [{}]
+        self.load(path)
+        self.verify(self.loaded_config)
 
-  def load(self, path):
-    with open(path) as file:
-        self.loadedConfig = yaml.load(file, Loader=yaml.FullLoader)
-    print("Loaded config: %s" % path)
+    def load(self, path):
+        with open(path, encoding="utf8") as file:
+            self.loaded_config = yaml.load(file, Loader=yaml.FullLoader)
+        print(f"Loaded config: {path}")
 
-  def verify(self, config):
-    keys = ["shortcut", "suppress", "script"]
-    for c in config:
-      if len(c) != len(keys):
-        print("More settings found than supported in the config. Required are: %s" % keys)
-        exit(1)
+    def verify(self, config):
+        keys = ["shortcut", "suppress", "script"]
+        for c in config:
+            if len(c) != len(keys):
+                raise RuntimeError(
+                    f"More settings found than supported in the config. Required are: {keys}"
+                )
 
-      for key in c.keys():
-        if key not in keys:
-          print("Key: %s, missing in config.")
-          exit(1)
+            for key in c.keys():
+                if key not in keys:
+                    raise RuntimeError(f"Key: {key}, missing in config.")
 
-  @property
-  def config(self):
-    return self.loadedConfig
+    @property
+    def config(self):
+        return self.loaded_config
