@@ -13,3 +13,8 @@
   script:
     - /bin/bash
     - ./scripts/open_blog.sh
+- shortcut: "ctrl+alt+b"
+  suppress: false
+  script:
+    - /bin/bash
+    - ./scripts/do_blender.sh
